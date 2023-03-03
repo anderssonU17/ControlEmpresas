@@ -14,7 +14,6 @@ const CompanySchema = Schema({
         address: String, 
         municipality: String
     }]
-
 })
 
 module.exports = mongoose.model('Companys', CompanySchema);

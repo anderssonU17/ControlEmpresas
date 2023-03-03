@@ -92,4 +92,29 @@ const loginCompany = async(req, res) => {
     }
 }
 
-module.exports = {createCompany, readCompany, loginCompany};
+const addBranchOffice = async(req, res) => {
+    const {name, address, municipality} = req.body;
+    const companyId = req.company.id; // Obtenemos el id de la empresa del token 
+
+    try{
+        const company = await Company.findById(companyId);
+        if(!company){
+            return res.status(400).json({message: 'La empresa no existe'});
+        }
+
+        const newBranchOffice = {
+            name, 
+            address, 
+            municipality,
+        };
+
+        company.branchOffices.push(newBranchOffice); // Se agrega la sucursal 
+        await company.save();
+
+        res.json({message: 'Sucursal agregada exitosamente'});
+    }catch(error){
+        console.log(error);
+        res.status(500).send("Error en el servidor")
+    }
+}
+module.exports = {createCompany, readCompany, loginCompany, addBranchOffice};

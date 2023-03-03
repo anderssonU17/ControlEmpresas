@@ -1,13 +1,16 @@
 'use strict'
 
 const {Router} = require('express');
-const { createCompany, readCompany, loginCompany } = require('../controller/company.controller');
+const { createCompany, readCompany, loginCompany, addBranchOffice } = require('../controller/company.controller');
+const { validateJWT } = require('../middlewares/validate-jwt');
 
 const api = Router();
 
 api.post('/create-company', createCompany);
 api.get('/read-company', readCompany);
 api.post('/login', loginCompany);
+
+api.post('/addBranchOffices', validateJWT, addBranchOffice);
 
 module.exports = api;
 
