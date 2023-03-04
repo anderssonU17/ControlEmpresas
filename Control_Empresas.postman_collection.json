@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "e47424c8-5c0b-428a-b255-b3ce4e05c4e8",
+		"name": "Control_Empresas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "REGISTER COMPANY",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Intelaf",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "Intelaf@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "Inte123",
+							"type": "default"
+						},
+						{
+							"key": "address",
+							"value": "12 calle 12-23 Zona 1",
+							"type": "default"
+						},
+						{
+							"key": "typeCompany",
+							"value": "Tecnologico",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3004/api/create-company",
+					"host": [
+						"localhost"
+					],
+					"port": "3004",
+					"path": [
+						"api",
+						"create-company"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "address",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "typeCompany",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LIST COMPANYS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Claro",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "Clarogt@gmail.com",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "Clarogt12",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "address",
+							"value": "13 calle 13-24 zona 1",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "typeCompany",
+							"value": "Establecimiento",
+							"type": "default",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3004/api/read-company",
+					"host": [
+						"localhost"
+					],
+					"port": "3004",
+					"path": [
+						"api",
+						"read-company"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "address",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "typeCompany",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "",
+							"value": "",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "Intelaf@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "Inte123",
+							"type": "default"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "default",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3004/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3004",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "address",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "typeCompany",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD BRANCH OFFICE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDAyZDk5MmE0M2IxYTcyOWY3YmI5NjEiLCJuYW1lIjoiSW50ZWxhZkBnbWFpbC5jb20iLCJlbWFpbCI6IkludGVsYWZAZ21haWwuY29tIiwiaWF0IjoxNjc3OTA4Mzk3LCJleHAiOjE2Nzc5MTE5OTd9.zgHyNGigqRKHn3wbWnag-qfwDg75fPJJsDqEwgmYfRA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Intelaf Miraflores",
+							"type": "default"
+						},
+						{
+							"key": "address",
+							"value": "Miraflores",
+							"type": "default"
+						},
+						{
+							"key": "municipality",
+							"value": "Guatemala",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3004/api/addBranchOffices",
+					"host": [
+						"localhost"
+					],
+					"port": "3004",
+					"path": [
+						"api",
+						"addBranchOffices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EDIT BRANCHOFIICE",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDAyZDk5MmE0M2IxYTcyOWY3YmI5NjEiLCJuYW1lIjoiSW50ZWxhZkBnbWFpbC5jb20iLCJlbWFpbCI6IkludGVsYWZAZ21haWwuY29tIiwiaWF0IjoxNjc3OTA4Mzk3LCJleHAiOjE2Nzc5MTE5OTd9.zgHyNGigqRKHn3wbWnag-qfwDg75fPJJsDqEwgmYfRA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "idSucursal",
+							"value": "6402d9f7a43b1a729f7bb969",
+							"type": "default"
+						},
+						{
+							"key": "name",
+							"value": "Intelaf Metronorte",
+							"type": "default"
+						},
+						{
+							"key": "address",
+							"value": "Metronorte",
+							"type": "default"
+						},
+						{
+							"key": "municipality",
+							"value": "Guatemala",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3004/api/editBranchOffices/6402d992a43b1a729f7bb961",
+					"host": [
+						"localhost"
+					],
+					"port": "3004",
+					"path": [
+						"api",
+						"editBranchOffices",
+						"6402d992a43b1a729f7bb961"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE BRANCHOFFICE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDAyZDk5MmE0M2IxYTcyOWY3YmI5NjEiLCJuYW1lIjoiSW50ZWxhZkBnbWFpbC5jb20iLCJlbWFpbCI6IkludGVsYWZAZ21haWwuY29tIiwiaWF0IjoxNjc3OTA4Mzk3LCJleHAiOjE2Nzc5MTE5OTd9.zgHyNGigqRKHn3wbWnag-qfwDg75fPJJsDqEwgmYfRA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Intelaf Miraflores",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3004/api/deleteBranchOffices",
+					"host": [
+						"localhost"
+					],
+					"port": "3004",
+					"path": [
+						"api",
+						"deleteBranchOffices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LIST BRANCHOFFICES",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDAyZDk5MmE0M2IxYTcyOWY3YmI5NjEiLCJuYW1lIjoiSW50ZWxhZkBnbWFpbC5jb20iLCJlbWFpbCI6IkludGVsYWZAZ21haWwuY29tIiwiaWF0IjoxNjc3OTA4Mzk3LCJleHAiOjE2Nzc5MTE5OTd9.zgHyNGigqRKHn3wbWnag-qfwDg75fPJJsDqEwgmYfRA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "localhost:3004/api/read-branchOffices",
+					"host": [
+						"localhost"
+					],
+					"port": "3004",
+					"path": [
+						"api",
+						"read-branchOffices"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
