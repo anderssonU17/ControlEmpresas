@@ -117,4 +117,72 @@ const addBranchOffice = async(req, res) => {
         res.status(500).send("Error en el servidor")
     }
 }
-module.exports = {createCompany, readCompany, loginCompany, addBranchOffice};
+
+
+const editBranchOffice = async(req, res) => {
+    const id = req.params.id;
+    const {idSucursal, name, address, municipality} = req.body;
+    const companyId = req.company.id;
+    try{
+        const updateSucursal = await Company.updateOne(
+            {_id: id, "branchOffices._id": idSucursal},
+            {
+                $set: {
+                    "branchOffices.$.name": name,
+                    "branchOffices.$.address": address,
+                    "branchOffices.$.municipality": municipality,
+                },
+            },
+            {new: true}
+        );
+        if(!updateSucursal){
+            return res.status(404).send({message: 'No existe esta sucursal'});
+        }
+
+        return res
+        .status(200)
+        .send({updateSucursal, message: 'Sucursal editada correctamente'});
+    }catch(err){
+        throw new Error(err);
+    }
+    
+}
+
+const deleteBranchOffice = async (req, res = response) => {
+    try {
+    const { name } = req.body;
+    const { company } = req;
+
+      // Eliminar el branch office
+    company.branchOffices = company.branchOffices.filter(
+        (office) => office.name !== name
+    );
+    await company.save();
+
+    res.status(200).json({
+        ok: true,
+        message: "Branch office eliminado correctamente",
+        company,
+    });
+    } catch (error) {
+    console.log(error);
+    res.status(500).json({
+        ok: false,
+        message: "Error al eliminar el branch office",
+    });
+    }
+};
+
+const readBranchOffices = async (req, res) => {
+    try {
+        const company = req.company;
+        const branchOffices = company.branchOffices;
+
+        res.status(200).json(branchOffices);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Error al listar los branchOffices" });
+    }
+};
+
+module.exports = {createCompany, readCompany, loginCompany, addBranchOffice, editBranchOffice, deleteBranchOffice, readBranchOffices};

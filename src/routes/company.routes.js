@@ -1,7 +1,7 @@
 'use strict'
 
 const {Router} = require('express');
-const { createCompany, readCompany, loginCompany, addBranchOffice } = require('../controller/company.controller');
+const { createCompany, readCompany, loginCompany, addBranchOffice, editBranchOffice, deleteBranchOffice, readBranchOffices} = require('../controller/company.controller');
 const { validateJWT } = require('../middlewares/validate-jwt');
 
 const api = Router();
@@ -11,6 +11,10 @@ api.get('/read-company', readCompany);
 api.post('/login', loginCompany);
 
 api.post('/addBranchOffices', validateJWT, addBranchOffice);
+
+api.put('/editBranchOffices/:id', validateJWT, editBranchOffice);
+api.delete('/deleteBranchOffices', validateJWT, deleteBranchOffice);
+api.get('/read-branchOffices', validateJWT, readBranchOffices)
 
 module.exports = api;
 
